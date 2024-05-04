@@ -1,7 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    text-align: center; /* Aligns text and inline elements like images centrally */
+    text-align: center; /* Centers text and inline elements like images */
+    background-color: #003366; /* Dark blue background */
+    color: white; /* Ensures text is readable on a dark background */
 }
 .logo-container {
     margin-bottom: 20px;
@@ -17,24 +19,28 @@ label, select, button, .result {
     width: 100%;
     max-width: 600px; /* Ensures form controls do not stretch too far on larger screens */
     margin: 10px auto;
+    color: white; /* Ensures form element labels are visible on dark background */
+}
+select, button, .result {
+    background-color: #005599; /* Slightly lighter blue for contrast */
+    color: white; /* White text for readability */
+    border: 1px solid #004477; /* Border to enhance visibility */
 }
 button {
     padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
+    background-color: #007BFF; /* Brighter blue for buttons */
     border-radius: 5px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover for button */
 }
 .result {
     margin-top: 20px;
     font-size: 18px;
     padding: 10px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background-color: #004477; /* Dark blue for result box */
+    border: 1px solid #002244; /* Darker border for depth */
 }
 @media (max-width: 600px) {
     body, label, select, button, .result {
