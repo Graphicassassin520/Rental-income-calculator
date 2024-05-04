@@ -5,18 +5,18 @@ body {
 }
 .logo-container {
     margin-bottom: 20px;
-    text-align: center; /* Ensures the logo image is centered */
 }
-#brandLogo {
-    width: 100%;
-    max-width: 300px; /* Adjust this value to fit the size you want for the logo */
-    height: auto; /* Keeps the image ratio intact */
+.logo-container img {
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto;
+    display: block; /* Stack images vertically */
+    margin: 0 auto 10px; /* Center images and add space between them */
 }
 label, select, button, .result {
     display: block;
     width: 100%;
     max-width: 600px; /* Ensures form controls do not stretch too far on larger screens */
-    margin: 10px auto; /* Centers the elements horizontally */
+    margin: 10px auto;
 }
 button {
     padding: 10px;
