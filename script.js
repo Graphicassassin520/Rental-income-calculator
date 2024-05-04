@@ -6,13 +6,13 @@ function calculateIncome() {
     const nights = parseInt(document.getElementById("nights").value);
     const arp = document.getElementById("arp").value;
 
-    // Check if all necessary inputs are provided
+    // Validate input fields are selected and nights are a number
     if (!location || !season || !room_size || isNaN(nights) || !arp) {
         document.getElementById("income_result").innerHTML = "<strong>Please fill in all fields.</strong>";
         return;
     }
 
-    // Define rates based on location, season, and room size
+    // Rates based on location, season, and room size
     const rates = {
         ormond_beach: {
             standard: { studio: 215, "1_bd": 315, "2_bd": 415, "3_bd": 415 },
@@ -24,26 +24,25 @@ function calculateIncome() {
         }
     };
 
-    // Calculate the nightly rate and total income based on selections
+    // Determine nightly rate and calculate total income for the stay
     let nightly_rate = rates[location][season][room_size];
-    let effective_nights = nights > 4 ? 5 : nights; // Use special pricing rule for more than 4 nights
+    let effective_nights = nights > 4 ? 5 : nights;
     let total_income = nightly_rate * effective_nights;
 
-    // Calculate annual, 10-year, and 20-year projections
-    let days_per_year = nights > 4 ? 5 * 365 / 7 : nights * 365;
-    let income_per_year = nightly_rate * days_per_year;
-    let income_10_years = income_per_year * 10;
-    let income_20_years = income_per_year * 20;
+    // Calculate annual, 10-year, and 20-year projections assuming one rental week per year
+    let annual_income = nightly_rate * effective_nights;  // Only one week per year
+    let income_10_years = annual_income * 10;
+    let income_20_years = annual_income * 20;
 
-    // Generate the ARP status text based on user input
+    // Determine ARP status text based on the user selection
     let arp_text = arp === "yes" ? "13 Month Advance Priority Reservations" : "12 Month Advance Priority Reservations";
 
     // Update the HTML to display results with formatted numbers
     document.getElementById("income_result").innerHTML = `
-        <strong>Projected Rental Income: $${total_income.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>
-        Annual Projection: $${income_per_year.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
-        10 Year Projection: $${income_10_years.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
-        20 Year Projection: $${income_20_years.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+        <strong>Projected Rental Income: $${total_income.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>
+        Annual Projection: $${annual_income.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+        10 Year Projection: $${income_10_years.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+        20 Year Projection: $${income_20_years.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
         ${arp_text}
     `;
 }
