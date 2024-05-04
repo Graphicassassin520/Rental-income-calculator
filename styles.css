@@ -1,12 +1,22 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    text-align: center; /* Aligns text and inline elements like images centrally */
+}
+.logo-container {
+    margin-bottom: 20px;
+    text-align: center; /* Ensures the logo image is centered */
+}
+#brandLogo {
+    width: 100%;
+    max-width: 300px; /* Adjust this value to fit the size you want for the logo */
+    height: auto; /* Keeps the image ratio intact */
 }
 label, select, button, .result {
     display: block;
     width: 100%;
     max-width: 600px; /* Ensures form controls do not stretch too far on larger screens */
-    margin-top: 10px;
+    margin: 10px auto; /* Centers the elements horizontally */
 }
 button {
     padding: 10px;
