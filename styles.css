@@ -1,63 +1,66 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    text-align: center; /* Center content horizontally */
+    text-align: center;
     background-color: #003366; /* Dark blue background */
-    color: white; /* White text for contrast */
+    color: white; /* Ensures text is readable on a dark background */
     margin: 0;
 }
 
 .logo-container {
-    margin-bottom: 20px; /* Space below the logo container */
+    margin-bottom: 20px;
 }
 
 .logo-container img {
-    max-width: 100%; /* Responsive image width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Each image on a new line */
-    margin: 0 auto 10px; /* Center align and space between logos */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+h2 {
+    color: #ffffff; /* White color for headings */
 }
 
 label, select, button, .result {
-    display: block; /* Stack elements vertically */
-    width: 100%; /* Full width */
-    max-width: 600px; /* Max width for better readability */
-    margin: 10px auto; /* Center align and space around */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    box-sizing: border-box;
 }
 
-select, input, button {
-    padding: 10px; /* Padding inside elements */
-    border: 1px solid #004477; /* Subtle border for elements */
-    background-color: #005599; /* Slightly lighter blue for input and button backgrounds */
-    color: white; /* Text color for readability */
-    border-radius: 5px; /* Rounded corners */
+select, input {
+    padding: 10px;
+    border: 1px solid #004477;
+    background-color: #005599;
+    color: white;
+    border-radius: 5px;
 }
 
 button {
-    background-color: #007BFF; /* Bright blue background for buttons */
-    cursor: pointer; /* Cursor indicates clickable */
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 .result {
-    font-size: 18px; /* Larger font size for results */
-    padding: 10px; /* Padding inside results box */
-    background-color: #004477; /* Dark blue for results background */
-    border: 1px solid #002244; /* Darker border for depth */
+    font-size: 18px;
+    padding: 10px;
+    background-color: #004477;
+    border: 1px solid #002244;
+    color: white;
 }
 
 @media (max-width: 600px) {
     body, label, select, button, .result {
-        padding: 10px; /* Adjust padding in smaller screens */
-    }
-    label, select, button {
-        width: 100%; /* Full width in small devices */
-    }
-    .result {
-        font-size: 16px; /* Slightly smaller font in small devices */
+        padding: 10px;
     }
 }
