@@ -1,90 +1,96 @@
+/* General styling for the page */
 body {
-    font-family: 'Roboto', sans-serif;
-    padding: 20px;
-    text-align: center;
-    background-color: #003366; /* Dark blue background */
-    color: white;
-    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Modern and readable font */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Padding around the content */
+    text-align: center; /* Center-align text and content */
+    background-color: #003366; /* Dark blue background throughout the page */
+    color: white; /* White text color for contrast */
 }
 
+/* Container for logos with adjusted styling for alignment and spacing */
 .logo-container {
-    background-color: white;
-    padding: 10px 0; /* Padding to give space above and below the logos */
-    margin-bottom: 20px; /* Space below the logo container */
-    display: flex;
+    padding: 20px 0; /* Padding above and below logos */
+    background-color: #003366; /* Background color to match the page */
+    display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack logos vertically */
     align-items: center; /* Center logos horizontally */
+    justify-content: center; /* Center content vertically in the container */
 }
 
+/* Styling for images (logos) */
 .logo-container img {
-    max-width: 100%;
-    max-height: 80px; /* Increase max height for larger logos */
+    max-height: 80px; /* Maximum height for each logo */
     width: auto; /* Maintain aspect ratio */
-    display: block; /* Ensures logos are on new lines */
-    margin: 10px 0; /* Adds vertical space between logos */
+    margin-bottom: 15px; /* Space between logos */
 }
 
+/* Heading style for major titles */
 h1 {
-    color: white;
-    font-weight: 500;
-    margin-bottom: 20px;
+    font-weight: 500; /* Semi-bold font weight */
+    margin: 20px 0; /* Margin above and below the heading */
 }
 
+/* Styles for form elements for better visual integration and usability */
 form {
-    font-weight: 400;
+    max-width: 600px; /* Maximum width of form */
+    margin: 0 auto; /* Centering the form horizontally */
 }
 
-label, select, button, .result {
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    margin: 10px auto;
-    box-sizing: border-box;
+/* Styling labels for better readability */
+label {
+    font-size: 18px; /* Larger font size for labels */
+    margin: 15px 0; /* Space above and below each label */
 }
 
+/* Unified styling for all input fields and select boxes */
 select, input {
-    padding: 12px 10px;
-    border: 2px solid #004477;
-    background-color: #005599;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 100%; /* Full width of their container */
+    padding: 12px 10px; /* Padding inside the elements */
+    background-color: #005599; /* Lighter blue background for input fields */
+    border: 2px solid #004477; /* Border color slightly darker than the input background */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    color: white; /* Text color */
+    margin-bottom: 10px; /* Margin below each input field */
 }
 
+/* Styling for the submit button with interactive effects */
 button {
-    padding: 12px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.2s;
+    padding: 15px 20px; /* Padding inside the button */
+    background-color: #007BFF; /* Bright blue background for the button */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* No border */
+    font-size: 18px; /* Larger font size for visibility */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s, transform 0.2s; /* Transition for visual effects */
 }
 
-button:hover, button:focus {
-    background-color: #0056b3;
-    transform: scale(1.05);
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight increase in size */
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.95); /* Slight decrease in size when clicked */
 }
 
+/* Result container styling for displaying calculation outcomes */
 .result {
-    font-size: 16px;
-    padding: 12px 10px;
-    background-color: #004477;
-    border: 1px solid #002244;
-    color: white;
+    font-size: 16px; /* Font size for results */
+    padding: 15px; /* Padding inside the result box */
+    background-color: #004477; /* Darker blue background */
+    border: 1px solid #002244; /* Border slightly darker than the background */
+    margin-top: 20px; /* Space above the result container */
 }
 
+/* Responsive design adjustments for smaller screens */
 @media (max-width: 600px) {
-    body, label, select, button, .result {
-        padding: 10px;
+    body {
+        padding: 10px; /* Reduced padding on smaller screens */
     }
-    label, select, button {
-        width: 100%;
+    form, .result {
+        width: 100%; /* Full width to utilize available space */
     }
 }
