@@ -1,75 +1,99 @@
+/* Basic styling for the entire page */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Clean, modern sans-serif font */
     padding: 20px;
-    text-align: center;
-    background-color: #003366; /* Dark blue background for contrast */
+    text-align: center; /* Centers content horizontally */
+    background-color: #003366; /* Dark blue background */
     color: white; /* White text for readability */
     margin: 0;
 }
 
+/* Styling for the logo container to create a distinct section for logos */
 .logo-container {
-    background-color: white; /* Sets a white background for the logo area */
-    padding: 10px 0; /* Adds padding above and below the logos */
-    margin-bottom: 20px; /* Space below the logo container */
+    background-color: white; /* White background behind logos for contrast */
+    padding: 10px 0; /* Vertical padding to increase the height */
+    margin-bottom: 20px; /* Adds space below the logo section */
+    display: flex; /* Flexbox to align logos nicely */
+    justify-content: center; /* Center logos horizontally */
+    align-items: center; /* Center logos vertically */
 }
 
+/* Ensures logos are responsive and maintain their proportions */
 .logo-container img {
-    max-width: 100%; /* Ensures the logo is responsive */
-    height: auto; /* Maintains the aspect ratio of the logo */
-    display: block; /* Stacks logos if multiple */
-    margin: 0 auto; /* Centers logos horizontally */
+    height: auto; /* Maintain aspect ratio */
+    display: inline-block; /* Display logos inline with proper alignment */
+    vertical-align: middle; /* Align logos vertically in the center */
+    margin: 0 10px; /* Adds horizontal space between multiple logos */
 }
 
-h2 {
-    color: white; /* White heading color */
-    margin-bottom: 20px; /* Spacing below the heading */
+/* Heading styling to emphasize the calculator's title */
+h1 {
+    color: white;
+    font-weight: 500; /* Slightly bold for better visibility */
+    margin-bottom: 20px; /* Spacing after the title */
+}
+
+/* Form elements styling for better usability */
+form {
+    font-weight: 400;
 }
 
 label, select, button, .result {
     display: block;
-    width: 100%; /* Full width to fit container */
-    max-width: 600px; /* Maximum width for better control */
-    margin: 10px auto; /* Centers the elements and adds spacing */
-    box-sizing: border-box; /* Includes padding and border in width */
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    box-sizing: border-box; /* Includes padding and border in the element's total width */
 }
 
+/* Dropdowns and input fields styling for enhanced interaction */
 select, input {
-    padding: 15px 10px; /* Larger padding for easier interaction */
-    border: 1px solid #004477; /* Subtle border color */
-    background-color: #005599; /* Background color for inputs */
-    color: white; /* Text color */
-    font-size: 18px; /* Larger font size for readability */
-    border-radius: 5px; /* Rounded corners for aesthetics */
-    cursor: pointer; /* Indicates selectable items */
+    padding: 12px 10px;
+    border: 2px solid #004477; /* Subtle border for depth */
+    background-color: #005599; /* Lighter blue for visibility */
+    color: white;
+    font-size: 16px; /* Larger font size for readability */
+    border-radius: 5px;
+    cursor: pointer; /* Cursor change to indicate interactiveness */
 }
 
+/* Button styling for actions */
 button {
-    padding: 15px 10px; /* Uniform padding with select elements */
-    background-color: #007BFF; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* No border for a cleaner look */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Indicates a clickable button */
-    font-size: 18px; /* Larger font size to match select inputs */
+    padding: 12px 20px;
+    background-color: #007BFF; /* Vibrant blue for attention */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Large font size for easy reading */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
 }
 
-button:hover {
-    background-color: #0056b3; /* Darker color on hover for feedback */
+/* Hover and active states for buttons for feedback on interaction */
+button:hover, button:focus {
+    background-color: #0056b3; /* Darker on hover for feedback */
+    transform: scale(1.05); /* Slight increase in size for emphasis */
 }
 
+button:active {
+    transform: scale(0.95); /* Small shrink effect when clicked */
+}
+
+/* Result box styling to display outputs clearly */
 .result {
-    font-size: 18px; /* Uniform font size for results */
-    padding: 15px 10px; /* Padding for visibility */
-    background-color: #004477; /* Background color for result box */
-    border: 1px solid #002244; /* Darker border for depth */
-    color: white; /* Text color for contrast */
+    font-size: 16px; /* Readable font size */
+    padding: 12px 10px;
+    background-color: #004477; /* Darker shade for result box */
+    border: 1px solid #002244; /* Dark border for definition */
+    color: white;
 }
 
+/* Responsive design adjustments for smaller screens */
 @media (max-width: 600px) {
     body, label, select, button, .result {
-        padding: 10px; /* Slight reduction in padding for smaller screens */
+        padding: 10px; /* Slightly less padding on smaller screens */
     }
     label, select, button {
-        width: 100%; /* Full width on small screens */
+        width: 100%; /* Full width for mobile responsiveness */
     }
 }
