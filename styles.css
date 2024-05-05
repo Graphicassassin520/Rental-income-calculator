@@ -1,34 +1,35 @@
-/* General styling for the page */
+/* General styling for the entire page */
 body {
     font-family: 'Roboto', sans-serif; /* Modern and readable font */
     margin: 0; /* Remove default margin */
     padding: 20px; /* Padding around the content */
-    text-align: center; /* Center-align text and content */
-    background-color: #003366; /* Dark blue background throughout the page */
+    text-align: center; /* Centers content horizontally */
+    background-color: #003366; /* Dark blue background used throughout the page */
     color: white; /* White text color for contrast */
 }
 
 /* Container for logos with adjusted styling for alignment and spacing */
 .logo-container {
     padding: 20px 0; /* Padding above and below logos */
-    background-color: #003366; /* Background color to match the page */
-    display: flex; /* Use flexbox for layout */
+    background-color: #003366; /* Ensuring background color matches the body */
+    display: flex; /* Uses flexbox for layout */
     flex-direction: column; /* Stack logos vertically */
     align-items: center; /* Center logos horizontally */
     justify-content: center; /* Center content vertically in the container */
 }
 
-/* Styling for images (logos) */
+/* Ensures logos are responsive and maintain their proportions */
 .logo-container img {
-    max-height: 80px; /* Maximum height for each logo */
+    max-height: 80px; /* Increased max height for better visibility */
     width: auto; /* Maintain aspect ratio */
     margin-bottom: 15px; /* Space between logos */
 }
 
 /* Heading style for major titles */
 h1 {
-    font-weight: 500; /* Semi-bold font weight */
-    margin: 20px 0; /* Margin above and below the heading */
+    font-weight: 500; /* Semi-bold for better visibility */
+    margin: 20px 0; /* Margin around heading */
+    color: white; /* Ensuring the heading is white */
 }
 
 /* Styles for form elements for better visual integration and usability */
@@ -37,60 +38,57 @@ form {
     margin: 0 auto; /* Centering the form horizontally */
 }
 
-/* Styling labels for better readability */
-label {
-    font-size: 18px; /* Larger font size for labels */
-    margin: 15px 0; /* Space above and below each label */
+label, select, button, .result {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    box-sizing: border-box;
 }
 
-/* Unified styling for all input fields and select boxes */
 select, input {
-    width: 100%; /* Full width of their container */
-    padding: 12px 10px; /* Padding inside the elements */
-    background-color: #005599; /* Lighter blue background for input fields */
-    border: 2px solid #004477; /* Border color slightly darker than the input background */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    color: white; /* Text color */
-    margin-bottom: 10px; /* Margin below each input field */
+    padding: 12px 10px;
+    border: 2px solid #004477;
+    background-color: #005599;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Styling for the submit button with interactive effects */
 button {
-    padding: 15px 20px; /* Padding inside the button */
-    background-color: #007BFF; /* Bright blue background for the button */
-    color: white; /* Text color */
-    border-radius: 5px; /* Rounded corners */
-    border: none; /* No border */
-    font-size: 18px; /* Larger font size for visibility */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.2s, transform 0.2s; /* Transition for visual effects */
+    padding: 15px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight increase in size */
+button:hover, button:focus {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 button:active {
-    transform: scale(0.95); /* Slight decrease in size when clicked */
+    transform: scale(0.95);
 }
 
-/* Result container styling for displaying calculation outcomes */
 .result {
-    font-size: 16px; /* Font size for results */
-    padding: 15px; /* Padding inside the result box */
-    background-color: #004477; /* Darker blue background */
-    border: 1px solid #002244; /* Border slightly darker than the background */
-    margin-top: 20px; /* Space above the result container */
+    font-size: 16px;
+    padding: 12px 10px;
+    background-color: #004477;
+    border: 1px solid #002244;
+    color: white;
 }
 
-/* Responsive design adjustments for smaller screens */
 @media (max-width: 600px) {
-    body {
-        padding: 10px; /* Reduced padding on smaller screens */
+    body, label, select, button, .result {
+        padding: 10px; /* Slightly less padding on smaller screens */
     }
-    form, .result {
-        width: 100%; /* Full width to utilize available space */
+    label, select, button {
+        width: 100%; /* Full width on small screens */
     }
 }
