@@ -3,27 +3,26 @@ body {
     font-family: 'Roboto', sans-serif; /* Clean, modern sans-serif font */
     padding: 20px;
     text-align: center; /* Centers content horizontally */
-    background-color: #003366; /* Dark blue background */
+    background-color: #003366; /* Dark blue background for contrast */
     color: white; /* White text for readability */
     margin: 0;
 }
 
-/* Styling for the logo container to create a distinct section for logos */
+/* Styling for the logo container with a white background */
 .logo-container {
-    background-color: white; /* White background behind logos for contrast */
+    background-color: white; /* Sets a white background for the logos */
     padding: 10px 0; /* Vertical padding to increase the height */
-    margin-bottom: 20px; /* Adds space below the logo section */
-    display: flex; /* Flexbox to align logos nicely */
-    justify-content: center; /* Center logos horizontally */
-    align-items: center; /* Center logos vertically */
+    margin-bottom: 20px; /* Space below the logo container */
+    display: flex; /* Uses flexbox for better alignment */
+    justify-content: center; /* Centers logos horizontally */
+    align-items: center; /* Aligns logos vertically in the center */
 }
 
 /* Ensures logos are responsive and maintain their proportions */
 .logo-container img {
-    height: auto; /* Maintain aspect ratio */
-    display: inline-block; /* Display logos inline with proper alignment */
-    vertical-align: middle; /* Align logos vertically in the center */
-    margin: 0 10px; /* Adds horizontal space between multiple logos */
+    max-height: 50px; /* Limits the height of the logos to ensure they fit together */
+    width: auto; /* Maintains the aspect ratio of the logos */
+    margin: 0 15px; /* Adds horizontal space between the logos */
 }
 
 /* Heading styling to emphasize the calculator's title */
@@ -50,7 +49,7 @@ label, select, button, .result {
 select, input {
     padding: 12px 10px;
     border: 2px solid #004477; /* Subtle border for depth */
-    background-color: #005599; /* Lighter blue for visibility */
+    background-color: #005599; /* Background color for inputs */
     color: white;
     font-size: 16px; /* Larger font size for readability */
     border-radius: 5px;
@@ -81,9 +80,9 @@ button:active {
 
 /* Result box styling to display outputs clearly */
 .result {
-    font-size: 16px; /* Readable font size */
+    font-size: 16px; /* Uniform font size for results */
     padding: 12px 10px;
-    background-color: #004477; /* Darker shade for result box */
+    background-color: #004477; /* Background color for result box */
     border: 1px solid #002244; /* Dark border for definition */
     color: white;
 }
@@ -94,6 +93,6 @@ button:active {
         padding: 10px; /* Slightly less padding on smaller screens */
     }
     label, select, button {
-        width: 100%; /* Full width for mobile responsiveness */
+        width: 100%; /* Full width on small screens */
     }
 }
