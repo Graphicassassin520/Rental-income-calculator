@@ -4,69 +4,73 @@ body {
     margin: 0; /* Remove default margin */
     padding: 20px; /* Padding around the content */
     text-align: center; /* Centers content horizontally */
-    background-color: #003366; /* Dark blue background used throughout the page */
-    color: white; /* White text color for contrast */
+    background-color: #003366; /* Consistent dark blue background throughout the page */
+    color: white; /* White text for optimal contrast */
 }
 
-/* Container for logos with adjusted styling for alignment and spacing */
+/* Styling for the logo container */
 .logo-container {
-    padding: 20px 0; /* Padding above and below logos */
-    background-color: #003366; /* Background color to match the body */
-    display: flex; /* Uses flexbox for layout */
+    padding: 10px 0; /* Reduced padding for less vertical space */
+    background-color: #003366; /* Background color matches the page */
+    display: flex; /* Flexbox for layout */
     flex-direction: column; /* Stack logos vertically */
     align-items: center; /* Center logos horizontally */
     justify-content: center; /* Center content vertically in the container */
 }
 
-/* Ensures logos are responsive and maintain their proportions */
+/* Responsive and maintain aspect ratios for logos */
 .logo-container img {
-    max-height: 80px; /* Maximum height for each logo */
+    max-height: 80px; /* Set a maximum height for all logos */
     width: auto; /* Maintain aspect ratio */
-    margin-bottom: 15px; /* Space between logos */
+    margin: 0 auto; /* Center align and remove bottom margin for the last logo */
 }
 
-/* Specific style for the second (bottom) logo to make it 3/4 of its size */
-#timesharesLogo {
-    transform: scale(0.75); /* Reduce the size to 75% of its original */
+/* Apply specific margin reduction to the bottom logo for tighter spacing */
+.logo-container img:last-child {
+    margin-bottom: 5px; /* Significantly reduced bottom margin for the bottom logo */
 }
 
-/* Heading style for major titles */
+/* Main title styling */
 h1 {
-    font-weight: 500; /* Semi-bold for better visibility */
-    margin: 20px 0; /* Margin around heading */
-    color: white; /* Ensuring the heading is white */
+    font-weight: 500; /* Semi-bold font weight for clarity */
+    margin-top: 5px; /* Reduced top margin to bring title closer to the logo */
+    margin-bottom: 20px; /* Regular bottom margin */
+    color: white; /* Ensure text is clearly visible against the dark background */
 }
 
-/* Styles for form elements for better visual integration and usability */
+/* Styles for form elements for better user interaction */
 form {
-    font-weight: 400;
+    max-width: 600px; /* Restrict form width for better layout management */
+    margin: auto; /* Center form horizontally */
 }
 
-label, select, button, .result {
+/* Enhanced label styling for clarity */
+label {
     display: block;
-    width: 100%;
-    max-width: 600px;
-    margin: 10px auto;
-    box-sizing: border-box;
+    margin: 15px auto; /* Vertical spacing */
+    font-size: 18px; /* Larger font size for easy reading */
 }
 
+/* Input and select element styling with interactive effects */
 select, input {
-    padding: 12px 10px;
-    border: 2px solid #004477;
-    background-color: #005599;
+    display: block;
+    width: 100%; /* Full width within form */
+    padding: 12px 10px; /* Adequate padding for touch interaction */
+    background-color: #005599; /* Light blue background for visual interest */
+    border: 2px solid #004477; /* Solid border with a slightly darker shade */
     color: white;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }
 
+/* Button styling with dynamic feedback */
 button {
-    padding: 15px 20px;
+    padding: 12px 20px;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s, transform 0.2s;
 }
@@ -80,9 +84,10 @@ button:active {
     transform: scale(0.95);
 }
 
+/* Results container styling */
 .result {
     font-size: 16px;
-    padding: 12px 10px;
+    padding: 15px;
     background-color: #004477;
     border: 1px solid #002244;
     color: white;
@@ -91,9 +96,9 @@ button:active {
 
 @media (max-width: 600px) {
     body, label, select, button, .result {
-        padding: 10px; /* Slightly less padding on smaller screens */
+        padding: 10px;
     }
     label, select, button {
-        width: 100%; /* Full width on small screens */
+        width: 100%;
     }
 }
