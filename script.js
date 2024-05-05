@@ -1,18 +1,22 @@
 function calculateIncome() {
     // Retrieve values from form elements
-    const location = document.getElementById("location").value;
-    const season = document.getElementById("season").value;
-    const room_size = document.getElementById("room_size").value;
+    const locationElement = document.getElementById("location");
+    const seasonElement = document.getElementById("season");
+    const roomSizeElement = document.getElementById("room_size");
     const nights = parseInt(document.getElementById("nights").value);
     const arp = document.getElementById("arp").value;
 
-    // Validate input fields to ensure all necessary fields are filled
-    if (!location || !season || !room_size || isNaN(nights) || !arp) {
+    if (!locationElement.value || !seasonElement.value || !roomSizeElement.value || isNaN(nights) || !arp) {
         document.getElementById("income_result").innerHTML = "<strong>Please fill in all fields.</strong>";
         return;
     }
 
-    // Rates configuration based on location, season, and room size
+    // Prepare display names from selections
+    const locationName = locationElement.options[locationElement.selectedIndex].text;
+    const seasonName = seasonElement.options[seasonElement.selectedIndex].text;
+    const roomSizeName = roomSizeElement.options[roomSizeElement.selectedIndex].text;
+
+    // Rates based on location, season, and room size
     const rates = {
         ormond_beach: {
             standard: { studio: 215, "1_bd": 315, "2_bd": 415, "3_bd": 415 },
@@ -24,26 +28,27 @@ function calculateIncome() {
         }
     };
 
-    // Determine the nightly rate from the rates object
-    let nightly_rate = rates[location][season][room_size];
-    // Calculate the total income for the number of effective nights
-    let effective_nights = nights > 4 ? 5 : nights;  // Applies special rule for more than 4 nights
-    let total_income = nightly_rate * effective_nights;
+    // Retrieve rate for selected configuration
+    const selectedRate = rates[locationElement.value][seasonElement.value][roomSizeElement.value.replace(' ', '_').toLowerCase()];
+    const effectiveNights = nights > 4 ? 5 : nights;
+    const totalIncome = selectedRate * effectiveNights;
+    const annualIncome = totalIncome;  // One rental week per year
+    const income10Years = annualIncome * 10;
+    const income20Years = annualIncome * 20;
 
-    // Projections are based on only one rental period per year
-    let annual_income = total_income;  // Only one rental week's income per year
-    let income_10_years = annual_income * 10;
-    let income_20_years = annual_income * 20;
+    // ARP text
+    const arpText = arp === "yes" ? "13 Month Advance Priority Reservations" : "12 Month Advance Priority Reservations";
 
-    // ARP text based on user selection
-    let arp_text = arp === "yes" ? "13 Month Advance Priority Reservations" : "12 Month Advance Priority Reservations";
+    // Description of the rental configuration
+    const rentalDescription = `${locationName} ${seasonName} ${roomSizeName} ${nights} Nights`;
 
-    // Update the HTML element to display results
+    // Display the results
     document.getElementById("income_result").innerHTML = `
-        <strong>Projected Rental Income: $${total_income.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>
-        Annual Projection: $${annual_income.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
-        10 Year Projection: $${income_10_years.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
-        20 Year Projection: $${income_20_years.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
-        ${arp_text}
+        <strong>${rentalDescription}</strong><br>
+        <strong>Projected Rental Income: $${totalIncome.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>
+        Annual Projection: $${annualIncome.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+        10 Year Projection: $${income10Years.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+        20 Year Projection: $${income20Years.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}<br>
+        ${arpText}
     `;
 }
