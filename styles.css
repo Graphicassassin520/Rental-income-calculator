@@ -2,65 +2,74 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     text-align: center;
-    background-color: #003366; /* Dark blue background */
-    color: white; /* Ensures text is readable on a dark background */
+    background-color: #003366; /* Dark blue background for contrast */
+    color: white; /* White text for readability */
     margin: 0;
 }
 
 .logo-container {
-    margin-bottom: 20px;
+    background-color: white; /* Sets a white background for the logo area */
+    padding: 10px 0; /* Adds padding above and below the logos */
+    margin-bottom: 20px; /* Space below the logo container */
 }
 
 .logo-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
+    max-width: 100%; /* Ensures the logo is responsive */
+    height: auto; /* Maintains the aspect ratio of the logo */
+    display: block; /* Stacks logos if multiple */
+    margin: 0 auto; /* Centers logos horizontally */
 }
 
 h2 {
-    color: #ffffff; /* White color for headings */
+    color: white; /* White heading color */
+    margin-bottom: 20px; /* Spacing below the heading */
 }
 
 label, select, button, .result {
     display: block;
-    width: 100%;
-    max-width: 600px;
-    margin: 10px auto;
-    box-sizing: border-box;
+    width: 100%; /* Full width to fit container */
+    max-width: 600px; /* Maximum width for better control */
+    margin: 10px auto; /* Centers the elements and adds spacing */
+    box-sizing: border-box; /* Includes padding and border in width */
 }
 
 select, input {
-    padding: 10px;
-    border: 1px solid #004477;
-    background-color: #005599;
-    color: white;
-    border-radius: 5px;
+    padding: 15px 10px; /* Larger padding for easier interaction */
+    border: 1px solid #004477; /* Subtle border color */
+    background-color: #005599; /* Background color for inputs */
+    color: white; /* Text color */
+    font-size: 18px; /* Larger font size for readability */
+    border-radius: 5px; /* Rounded corners for aesthetics */
+    cursor: pointer; /* Indicates selectable items */
 }
 
 button {
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 15px 10px; /* Uniform padding with select elements */
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border for a cleaner look */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Indicates a clickable button */
+    font-size: 18px; /* Larger font size to match select inputs */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker color on hover for feedback */
 }
 
 .result {
-    font-size: 18px;
-    padding: 10px;
-    background-color: #004477;
-    border: 1px solid #002244;
-    color: white;
+    font-size: 18px; /* Uniform font size for results */
+    padding: 15px 10px; /* Padding for visibility */
+    background-color: #004477; /* Background color for result box */
+    border: 1px solid #002244; /* Darker border for depth */
+    color: white; /* Text color for contrast */
 }
 
 @media (max-width: 600px) {
     body, label, select, button, .result {
-        padding: 10px;
+        padding: 10px; /* Slight reduction in padding for smaller screens */
+    }
+    label, select, button {
+        width: 100%; /* Full width on small screens */
     }
 }
